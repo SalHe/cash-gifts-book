@@ -1,6 +1,7 @@
 package com.github.salhe.cash_gift.utils
 
 import android.content.Context
+import com.github.salhe.cash_gift.BuildConfig
 
 data class CashGift(
     val name: String,
@@ -13,7 +14,7 @@ private var cashGifts: List<CashGift>? = null
 
 internal fun Context.loadCashes() =
     if (cashGifts != null) cashGifts!! else
-        resources.assets.open("cash.csv")
+        resources.assets.open(BuildConfig.CASH_CSV_FILE_NAME)
             .readBytes()
             .let { String(it) }
             .lines()

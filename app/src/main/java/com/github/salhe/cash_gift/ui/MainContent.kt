@@ -17,6 +17,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.github.salhe.cash_gift.BuildConfig
 import com.github.salhe.cash_gift.ui.theme.CashGiftLeeTheme
 import com.github.salhe.cash_gift.utils.CashGift
 import com.github.salhe.cash_gift.utils.similarWith
@@ -78,6 +79,7 @@ fun MainContent(cashes: List<CashGift>) {
                 }
 
                 Row {
+                    Text(text = BuildConfig.CASH_GIFTS_DESCRIPTION)
                     Box(modifier = Modifier.weight(1f))
                     Text(
                         text = "合计：${
